@@ -63,11 +63,11 @@ namespace LibVLCSharp.UWP.Sample
         {
             LibVLC = new LibVLC(enableDebugLogs: false, eventArgs.SwapChainOptions);
             MediaPlayer = new MediaPlayer(LibVLC);
+            MediaPlayer.Playing += MediaPlayer_Playing;
+            MediaPlayer.VolumeChanged += MediaPlayer_VolumeChanged;
             Debug.WriteLine("Volume after creating mediaplayer: " + MediaPlayer.Volume);
             Debug.WriteLine("Setting volume to 20 percent");
             MediaPlayer.Volume = 20;
-            MediaPlayer.Playing += MediaPlayer_Playing;
-            MediaPlayer.VolumeChanged += MediaPlayer_VolumeChanged;
             using var media = new Media(LibVLC, new Uri("http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"));
             MediaPlayer.Play(media);
         }
