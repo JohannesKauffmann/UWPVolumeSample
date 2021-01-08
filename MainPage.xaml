@@ -22,5 +22,10 @@
                 </interactions:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
         </lvs:VideoView>
+		<Button Content="Mute/Unmute" 
+                HorizontalAlignment="Center" 
+                Height="112" Width="204"
+                Command="{Binding MuteUnmuteCommand}"/>
+				
     </Grid>
 </Page>
